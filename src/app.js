@@ -1,6 +1,5 @@
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import { Viewer } from './viewer.js';
-import { Validator } from './validator.js';
 import { Footer } from './components/footer';
 import queryString from 'query-string';
 
@@ -31,7 +30,6 @@ class App {
         this.viewerEl = null;
         this.spinnerEl = el.querySelector('.spinner');
         this.dropEl = el.querySelector('.dropzone');
-        this.validator = new Validator(el);
 
         // Remove the drag-and-drop feature
         // this.createDropzone();
@@ -88,9 +86,7 @@ class App {
             .then((gltf) => {
                 // TODO: GLTFLoader parsing can fail on invalid files. Ideally,
                 // we could run the validator either way.
-                if (!this.options.kiosk) {
-                    this.validator.validate(fileURL, rootPath, fileMap, gltf);
-                }
+                
                 cleanup();
             });
     }
