@@ -132,7 +132,9 @@ export class Viewer {
 		this.axesHelper = null;
 
 		this.addAxesHelper();
-		// this.addGUI();
+		this.addGUI();
+
+		this.gui.hide();
 		
 		this.animate = this.animate.bind(this);
 		requestAnimationFrame(this.animate);
@@ -300,7 +302,7 @@ export class Viewer {
 		this.setClips(clips);
 
 		this.updateLights();
-		//this.updateGUI();
+		this.updateGUI();
 		this.updateEnvironment();
 		this.updateDisplay();
 
