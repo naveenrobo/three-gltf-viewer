@@ -191,6 +191,7 @@ export class Viewer {
 						.replace(baseURL, '')
 						.replace(/^(\.?\/)/, '');
 
+				console.log(normalizedURL)
 				if (assetMap.has(normalizedURL)) {
 					const blob = assetMap.get(normalizedURL);
 					const blobURL = URL.createObjectURL(blob);
