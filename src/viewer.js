@@ -133,6 +133,7 @@ export class Viewer {
 
 		this.addAxesHelper();
 		this.addGUI();
+		this.gui.close();
 		if (options.kiosk) this.gui.close();
 
 		this.animate = this.animate.bind(this);

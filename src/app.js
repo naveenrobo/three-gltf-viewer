@@ -31,13 +31,12 @@ class App {
         this.viewerEl = null;
         this.spinnerEl = el.querySelector('.spinner');
         this.dropEl = el.querySelector('.dropzone');
-        this.inputEl = el.querySelector('#file-input');
         this.validator = new Validator(el);
 
         // Remove the drag-and-drop feature
         // this.createDropzone();
         this.hideSpinner();
-		
+
         // Load the dress.glb model on initialization
         this.load();
     }
