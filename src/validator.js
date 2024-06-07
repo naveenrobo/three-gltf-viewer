@@ -174,14 +174,7 @@ export class Validator {
 	}
 
 	bindListeners() {
-		const reportToggleBtn = this.toggleEl.querySelector('.report-toggle');
-		reportToggleBtn.addEventListener('click', () => this.showLightbox());
 
-		const reportToggleCloseBtn = this.toggleEl.querySelector('.report-toggle-close');
-		reportToggleCloseBtn.addEventListener('click', (e) => {
-			this.hideToggle();
-			e.stopPropagation();
-		});
 	}
 
 	showToggle() {
@@ -192,20 +185,6 @@ export class Validator {
 		this.toggleEl.classList.add('hidden');
 	}
 
-	showLightbox() {
-		if (!this.report) return;
-		const tab = window.open('', '_blank');
-		tab.document.body.innerHTML = `
-			<!DOCTYPE html>
-			<title>glTF 2.0 validation report</title>
-			<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
-			<link rel="stylesheet" href="{{location.protocol}}//{{location.host}}/style.css">
-			<style>
-				body { overflow-y: auto; }
-				html, body { background: #FFFFFF; }
-			</style>
-			${ValidatorReport({ ...this.report, location })}`;
-	}
 }
 
 function escapeHTML(unsafe) {

@@ -127,5 +127,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.VIEWER.app = app;
 
-    console.info('[glTF Viewer] Debugging data exported as `window.VIEWER`.');
+    console.info('[Dress Sim] Debugging data exported as `window.VIEWER`.');
 });
